@@ -9,7 +9,7 @@ public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array
-        ArrayList<String> inputLines = fileToArray("src\\dec2\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\day_2\\input.txt");
 
 //        Max number to look for
         int maxRed = 12;

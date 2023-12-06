@@ -9,7 +9,7 @@ public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\dec3\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\day_3\\input.txt");
 
 //        Pattern for what to find
         Pattern numberPattern = Pattern.compile("\\d+");

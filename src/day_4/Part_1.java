@@ -8,7 +8,7 @@ public class Part_1 {
     public static void main(String[] arg) {
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\dec4\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\day_4\\input.txt");
 
         int sum = 0;
 
