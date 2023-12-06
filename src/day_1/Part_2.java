@@ -46,11 +46,11 @@ public class Part_2 {
             while (matcher.find()){
                 out = matcher.group();
             }
-            String secoundNuber = numberSwitch(out);
+            String secondNumber = numberSwitch(out);
 
-//            Puts them together and caluclates sum
+//            Puts them together and calculates sum
             try{
-                sum += Integer.parseInt(firstNumber + secoundNuber);
+                sum += Integer.parseInt(firstNumber + secondNumber);
             }
             catch (Exception e){
                 System.out.println("Error, character in array: " + e);

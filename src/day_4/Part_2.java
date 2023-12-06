@@ -55,7 +55,7 @@ public class Part_2 {
             }
         }
 
-//        Caluclate sum
+//        Calculates sum
         int sum = 0;
         for (int numberOfCard : numberOfCards) {
             sum += numberOfCard;
