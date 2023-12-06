@@ -19,7 +19,7 @@ public class Part_2 {
         int time = Integer.parseInt(inputLines.get(0));
         long distance = Long.parseLong(inputLines.get(1));
 
-        // TODO: 06.12.2023 Use math instead of loops 
+        // TODO: 06.12.2023 Maybe use math instead of loops?
 //       Calculates max and minimum time
         int maxTime = 0;
         int minTime = 0;

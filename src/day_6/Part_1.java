@@ -28,7 +28,7 @@ public class Part_1 {
 
         int sum = 1;
 
-        // TODO: 06.12.2023 Use math instead of loop
+        // TODO: 06.12.2023 Maybe use math instead of loop?
 //        Calculate how many possible ways to win
         for (int i = 0; i < timeArray.length; i++) {
             int maxTime = 0; int minTime = 0;
