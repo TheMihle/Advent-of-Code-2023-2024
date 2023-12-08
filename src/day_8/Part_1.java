@@ -45,7 +45,7 @@ public class Part_1 {
 
 //        Finds the number of steps between AAA and ZZZ via two loops
         String nextKey = "AAA";
-        Boolean end = false;
+        boolean end = false;
         int numberOfSteps = 0;
         while (!end){
 
