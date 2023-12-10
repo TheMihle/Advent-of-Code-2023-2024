@@ -1,4 +1,5 @@
 // First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2
+// Should have sorted before doing RegEx
 
 package day_7;
 
@@ -42,13 +43,13 @@ public class Part_1_Solution_1 {
             Matcher twoMatcher = twoPattern.matcher(stringArray.get(0));
 
 //            Finds hand value with combination bonus
-            long key = 0;
+            long key = handValue(stringArray.get(0));
             if (fiveMatcher.find()){
-                key = 60000000000L + handValue(stringArray.get(0));
+                key += 60000000000L;
             } else if (fourMatcher.find()){
-                key = 50000000000L + handValue(stringArray.get(0));
+                key += 50000000000L;
             } else if (threeMatcher.find()){
-                key = 30000000000L + handValue(stringArray.get(0));
+                key += 30000000000L;
                 twoMatcher.find();
                 if (!twoMatcher.group(1).equals(threeMatcher.group(1))){
                         key += 10000000000L;
@@ -59,12 +60,10 @@ public class Part_1_Solution_1 {
                     }
                 }
             } else if (twoMatcher.find(0)) {
-                key = 10000000000L + handValue(stringArray.get(0));
+                key += 10000000000L;
                 if (twoMatcher.find(twoMatcher.end(1))) {
                     key += 10000000000L;
                 }
-            } else {
-                key = handValue(stringArray.get(0));
             }
 
 //            Add bid amount to sorted map with a hands value as key
@@ -85,7 +84,7 @@ public class Part_1_Solution_1 {
     }
 
 //    Calculates a hand value based on the individual cards only
-    static long handValue(String hand){
+    private static long handValue(String hand){
         long handValue = 0;
         int multiplier = 100000000;
         for (char character : hand.toCharArray()){
@@ -96,7 +95,7 @@ public class Part_1_Solution_1 {
     }
 
 //    Switch for the int value of cards
-    static int characterValue(char character){
+    private static int characterValue(char character){
         int value;
         switch (character){
             case 'A' -> value = 14;

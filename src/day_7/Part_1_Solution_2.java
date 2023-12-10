@@ -52,24 +52,21 @@ public class Part_1_Solution_2 {
             }
 
 //            Finds hand value with combination bonus
-            long key = 0;
+            long key = handValue(stringArray.get(0));
             if (cardMap.containsValue(5)){
-                key = 60000000000L + handValue(stringArray.get(0));
+                key += 60000000000L;
             } else if (cardMap.containsValue(4)) {
-                key = 50000000000L + handValue(stringArray.get(0));
+                key += 50000000000L;
             } else if (cardMap.containsValue(3) && cardMap.containsValue(2)) {
-                key = 40000000000L + handValue(stringArray.get(0));
+                key += 40000000000L;
             } else if (cardMap.containsValue(3)) {
-                key = 30000000000L + handValue(stringArray.get(0));
+                key += 30000000000L;
             } else if (cardMap.containsValue(2)) {
-                key = handValue(stringArray.get(0));
                 for (Map.Entry<Character, Integer> entry : cardMap.entrySet()){
                     if (entry.getValue() == 2){
                         key += 10000000000L;
                     }
                 }
-            } else {
-                key = handValue(stringArray.get(0));
             }
 
 //            Add bid amount to sorted map with a hands value as key
@@ -89,7 +86,7 @@ public class Part_1_Solution_2 {
     }
 
 //    Calculates a hand value based on the individual cards only
-    static long handValue(String hand){
+    private static long handValue(String hand){
         long handValue = 0;
         int multiplier = 100000000;
         for (char character : hand.toCharArray()){
@@ -100,7 +97,7 @@ public class Part_1_Solution_2 {
     }
 
 //    Switch for the int value of cards
-    static int characterValue(char character){
+    private static int characterValue(char character){
         int value;
         switch (character){
             case 'A' -> value = 14;
