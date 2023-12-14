@@ -44,12 +44,20 @@ public class Part_1_Solution_1 {
 
 //            Finds hand value with combination bonus
             long key = handValue(stringArray.get(0));
+
+//            Five of a kind
             if (fiveMatcher.find()){
                 key += 60000000000L;
+
+//                Four of a kind
             } else if (fourMatcher.find()){
                 key += 50000000000L;
+
+//                Tree of a kind
             } else if (threeMatcher.find()){
                 key += 30000000000L;
+
+//                Four of a kind/full house
                 twoMatcher.find();
                 if (!twoMatcher.group(1).equals(threeMatcher.group(1))){
                         key += 10000000000L;
@@ -59,6 +67,8 @@ public class Part_1_Solution_1 {
                         key += 10000000000L;
                     }
                 }
+
+//                One/Two pairs
             } else if (twoMatcher.find(0)) {
                 key += 10000000000L;
                 if (twoMatcher.find(twoMatcher.end(1))) {

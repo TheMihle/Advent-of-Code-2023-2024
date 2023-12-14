@@ -53,14 +53,24 @@ public class Part_1_Solution_2 {
 
 //            Finds hand value with combination bonus
             long key = handValue(stringArray.get(0));
+
+//            Five of a kind
             if (cardMap.containsValue(5)){
                 key += 60000000000L;
+
+//                Four of a kind
             } else if (cardMap.containsValue(4)) {
                 key += 50000000000L;
+
+//                Full house
             } else if (cardMap.containsValue(3) && cardMap.containsValue(2)) {
                 key += 40000000000L;
+
+//                Tree of a kind
             } else if (cardMap.containsValue(3)) {
                 key += 30000000000L;
+//
+//                One/two pairs
             } else if (cardMap.containsValue(2)) {
                 for (Map.Entry<Character, Integer> entry : cardMap.entrySet()){
                     if (entry.getValue() == 2){
