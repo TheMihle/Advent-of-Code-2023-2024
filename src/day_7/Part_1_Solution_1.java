@@ -1,4 +1,4 @@
-// First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2
+// First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2. Solution 1 is probably better
 // Should have sorted before doing RegEx
 
 package day_7;
