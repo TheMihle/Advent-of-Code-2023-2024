@@ -1,5 +1,4 @@
-// Probaby overcomplicated, bandaged sollution compared to what it needs to be
-// This sollution currently does not work
+// May be overcomplicated for what it needs to, but it works
 
     package day_7;
 
@@ -10,7 +9,7 @@
 
     import static common.ImportFile.fileToArray;
 
-    public class Part_2_Solution_2 {
+    public class Part_2 {
         public static void main(String[] arg){
 
     //        Import file as array per line
