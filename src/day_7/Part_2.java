@@ -98,12 +98,9 @@
                     }
                 }
 
-
     //            Add bid amount to sorted map with a hands value as key
                 handMap.put(key, Integer.parseInt(stringArray.get(1)));
             }
-
-            System.out.println(handMap);
 
     //        Calculates sum based on bid amount and rank
             int rank = 1;
