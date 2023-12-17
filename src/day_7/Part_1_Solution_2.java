@@ -26,7 +26,7 @@ public class Part_1_Solution_2 {
         }
 
 //        Sorted map for hand value and bids
-        TreeMap<Long, Integer> handMap = new TreeMap<>();
+        TreeMap<Long, Integer> handValueBidMap = new TreeMap<>();
 
         for (ArrayList<String> stringArray : cardArray) {
 
@@ -80,13 +80,13 @@ public class Part_1_Solution_2 {
             }
 
 //            Add bid amount to sorted map with a hands value as key
-            handMap.put(key, Integer.parseInt(stringArray.get(1)));
+            handValueBidMap.put(key, Integer.parseInt(stringArray.get(1)));
         }
 
 //        Calculates sum based on bid amount and rank
         int rank = 1;
         long sum = 0L;
-        for (Map.Entry<Long, Integer> entry : handMap.entrySet()){
+        for (Map.Entry<Long, Integer> entry : handValueBidMap.entrySet()){
             sum += (long) entry.getValue() * rank;
             rank++;
         }
