@@ -27,4 +27,27 @@ public class ImportFile {
         }
         return inputLines;
     }
+
+//    Converts a file to a String, all lines added together
+    public static String fileToString(String path){
+
+//        Creates scanner and string
+        Scanner scanner = null;
+        String inputString = "";
+
+//        Loads file with text to scanner
+        File inputFile = new File(path);
+        try {
+            scanner = new Scanner(inputFile);
+        } catch (Exception e) {
+            System.out.println("File not found: " + e);
+        }
+
+//        Puts lines in file in to array and returns it
+        while (scanner.hasNextLine()){
+            inputString += scanner.nextLine();
+        }
+
+        return inputString;
+    }
 }
