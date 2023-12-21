@@ -15,7 +15,7 @@ public class Part_1 {
 
         for (String step : sequence) {
 
-//            Calculates value of a step
+//            Calculates hash value of a step
             int currentValue = 0;
             for (char character : step.toCharArray()) {
                 currentValue += character;
