@@ -26,6 +26,7 @@ public class Part_1 {
         for (int i = 0; i < inputLines.size(); i++) {
             String[] colorCubeArray = inputLines.get(i).split(": ")[1]
                                                        .split("[;,]");
+            boolean overMax = false;
 
 //            Finds games with too many of a coloured cube
             for (String cube : colorCubeArray) {
@@ -37,8 +38,7 @@ public class Part_1 {
                     matcher = numberPattern.matcher(cube);
                     matcher.find();
                     if (Integer.parseInt(matcher.group()) > maxRed) {
-                        sum += i+1;
-                        break;
+                        overMax = true;
                     }
 
 //                    Green Cubes
@@ -46,8 +46,7 @@ public class Part_1 {
                     matcher = numberPattern.matcher(cube);
                     matcher.find();
                     if (Integer.parseInt(matcher.group()) > maxGreen) {
-                        sum += i+1;
-                        break;
+                        overMax = true;
                     }
 
 //                    Blue Cubes
@@ -55,22 +54,16 @@ public class Part_1 {
                     matcher = numberPattern.matcher(cube);
                     matcher.find();
                      if (Integer.parseInt(matcher.group()) > maxBlue) {
-                         sum += i+1;
-                         break;
+                         overMax = true;
                    }
                 }
             }
-        }
 
-//        Caluclates sum, inverts it
-        int totalSum = 0;
-        for (int i = 1; i <=100 ; i++) {
-            totalSum += i;
+//            Calculates sum
+            if (!overMax){ sum += i+1; }
         }
 
 //        Prints sum
-        System.out.println("Max sum: " + totalSum);
         System.out.println("Calculated sum: " + sum);
-        System.out.println("Actual Sum: " + (totalSum-sum));
     }
 }
