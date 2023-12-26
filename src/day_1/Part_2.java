@@ -8,18 +8,18 @@ public class Part_2 {
 
 //    Converts letter numbers to numbers
     static String numberSwitch(String string){
-        switch (string){
-            case "one" -> string = "1";
-            case "two" -> string = "2";
-            case "three" -> string = "3";
-            case "four" -> string = "4";
-            case "five" -> string = "5";
-            case "six" -> string = "6";
-            case "seven" -> string = "7";
-            case "eight" -> string = "8";
-            case "nine" -> string = "9";
-        }
-        return string;
+        return switch (string){
+            case "one" -> "1";
+            case "two" -> "2";
+            case "three" -> "3";
+            case "four" -> "4";
+            case "five" -> "5";
+            case "six" -> "6";
+            case "seven" -> "7";
+            case "eight" -> "8";
+            case "nine" -> "9";
+            default -> string;
+        };
     }
 
 //    Main

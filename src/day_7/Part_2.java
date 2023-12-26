@@ -127,15 +127,13 @@
 
     //    Switch for the int value of cards
         private static int characterValue(char character){
-            int value;
-            switch (character){
-                case 'A' -> value = 14;
-                case 'K' -> value = 13;
-                case 'Q' -> value = 12;
-                case 'J' -> value = 1;
-                case 'T' -> value = 10;
-                default -> value = Character.getNumericValue(character);
-            }
-            return value;
-        }
+        return switch (character){
+            case 'A' -> 14;
+            case 'K' -> 13;
+            case 'Q' -> 12;
+            case 'J' -> 1;
+            case 'T' -> 10;
+            default -> Character.getNumericValue(character);
+        };
+    }
     }
