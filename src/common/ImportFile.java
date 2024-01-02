@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class ImportFile {
 
-//    Converts a file in to an ArrayList, one line per element
-    public static ArrayList<String> fileToArray(String path){
+    //    Converts a file in to an ArrayList, one line per element
+    public static ArrayList<String> fileToArray(String path) {
 
 //        Creates scanner and array
         Scanner scanner = null;
@@ -22,14 +22,29 @@ public class ImportFile {
         }
 
 //        Puts lines in file in to array and returns it
-        while (scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             inputLines.add(scanner.nextLine());
         }
         return inputLines;
     }
 
-//    Converts a file to a String, all lines added together
-    public static String fileToString(String path){
+    public static String[][] fileTo2DArray(String path) {
+
+//        Import file as array per line
+        ArrayList<String> inputLines = fileToArray(path);
+
+//        Create an 2D array of inputlines
+        String[][] coordinate2DArray = new String[inputLines.size()][];
+
+        for (int i = 0; i < inputLines.size(); i++) {
+            coordinate2DArray[i] = (inputLines.get(i).split(""));
+        }
+
+        return coordinate2DArray;
+    }
+
+    //    Converts a file to a String, all lines added together
+    public static String fileToString(String path) {
 
 //        Creates scanner and string
         Scanner scanner = null;
@@ -44,7 +59,7 @@ public class ImportFile {
         }
 
 //        Puts lines in file in to array and returns it
-        while (scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             inputString += scanner.nextLine();
         }
 
