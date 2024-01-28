@@ -14,8 +14,7 @@ public class Part_2 {
         for (int y = 0; y < spaceCoordinates.length; y++) {
             int[][][] energizedCoordinates = new int[spaceCoordinates.length][spaceCoordinates[0].length][4];
 
-//        Starts recursive methods to find what coordinates are energized
-            right(0, y, spaceCoordinates, energizedCoordinates, true);
+            moveRight(0, y, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
             int localSum = numberOfEnergized(energizedCoordinates);
@@ -27,8 +26,7 @@ public class Part_2 {
         for (int y = 0; y < spaceCoordinates.length; y++) {
             int[][][] energizedCoordinates = new int[spaceCoordinates.length][spaceCoordinates[0].length][4];
 
-//        Starts recursive methods to find what coordinates are energized
-            left(spaceCoordinates.length - 1, y, spaceCoordinates, energizedCoordinates, true);
+            moveLeft(spaceCoordinates.length - 1, y, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
             int localSum = numberOfEnergized(energizedCoordinates);
@@ -40,8 +38,7 @@ public class Part_2 {
         for (int x = 0; x < spaceCoordinates[0].length; x++) {
             int[][][] energizedCoordinates = new int[spaceCoordinates.length][spaceCoordinates[0].length][4];
 
-//        Starts recursive methods to find what coordinates are energized
-            downwards(x, 0, spaceCoordinates, energizedCoordinates, true);
+            moveDownwards(x, 0, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
             int localSum = numberOfEnergized(energizedCoordinates);
@@ -53,8 +50,7 @@ public class Part_2 {
         for (int x = 0; x < spaceCoordinates[0].length; x++) {
             int[][][] energizedCoordinates = new int[spaceCoordinates.length][spaceCoordinates[0].length][4];
 
-//        Starts recursive methods to find what coordinates are energized
-            upwards(x, spaceCoordinates[0].length - 1, spaceCoordinates, energizedCoordinates, true);
+            moveUpwards(x, spaceCoordinates[0].length - 1, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
             int localSum = numberOfEnergized(energizedCoordinates);
@@ -67,7 +63,7 @@ public class Part_2 {
     }
 
     //    Moves downwards in coordinateSystem and energizes until symbol is hit, or loop is found
-    static void downwards(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
+    static void moveDownwards(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
 
         do {
             if (!first) {
@@ -82,17 +78,17 @@ public class Part_2 {
 
 //        Calls new method(s) for direction based on symbol
         switch (spaceCoordinates[y][x]) {
-            case "\\" -> right(x, y, spaceCoordinates, energizedCoordinates, false);
-            case "/" -> left(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "\\" -> moveRight(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "/" -> moveLeft(x, y, spaceCoordinates, energizedCoordinates, false);
             case "-" -> {
-                left(x, y, spaceCoordinates, energizedCoordinates, false);
-                right(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveLeft(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveRight(x, y, spaceCoordinates, energizedCoordinates, false);
             }
         }
     }
 
-    //    Moves upwards in coordinateSystem and energizes until symbol is hit, or loop is found
-    static void upwards(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
+//    Moves upwards in coordinateSystem and energizes until symbol is hit, or loop is found
+    static void moveUpwards(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
 
         do {
             if (!first) {
@@ -107,17 +103,17 @@ public class Part_2 {
 
 //        Calls new method(s) for direction based on symbol
         switch (spaceCoordinates[y][x]) {
-            case "\\" -> left(x, y, spaceCoordinates, energizedCoordinates, false);
-            case "/" -> right(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "\\" -> moveLeft(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "/" -> moveRight(x, y, spaceCoordinates, energizedCoordinates, false);
             case "-" -> {
-                left(x, y, spaceCoordinates, energizedCoordinates, false);
-                right(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveLeft(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveRight(x, y, spaceCoordinates, energizedCoordinates, false);
             }
         }
     }
 
-    //    Moves left in coordinateSystem and energizes until symbol is hit, or loop is found
-    static void left(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
+//    Moves left in coordinateSystem and energizes until symbol is hit, or loop is found
+    static void moveLeft(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
 
         do {
             if (!first) {
@@ -133,16 +129,16 @@ public class Part_2 {
 //        Calls new method(s) for direction based on symbol
         switch (spaceCoordinates[y][x]) {
             case "|" -> {
-                upwards(x, y, spaceCoordinates, energizedCoordinates, false);
-                downwards(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveUpwards(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveDownwards(x, y, spaceCoordinates, energizedCoordinates, false);
             }
-            case "\\" -> upwards(x, y, spaceCoordinates, energizedCoordinates, false);
-            case "/" -> downwards(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "\\" -> moveUpwards(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "/" -> moveDownwards(x, y, spaceCoordinates, energizedCoordinates, false);
         }
     }
 
-    //    Moves right in coordinateSystem and energizes until symbol is hit, or loop is found
-    static void right(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
+//    Moves right in coordinateSystem and energizes until symbol is hit, or loop is found
+    static void moveRight(int x, int y, String[][] spaceCoordinates, int[][][] energizedCoordinates, boolean first) {
 
         do {
             if (!first) {
@@ -159,15 +155,15 @@ public class Part_2 {
 //        Calls new method(s) for direction based on symbol
         switch (spaceCoordinates[y][x]) {
             case "|" -> {
-                upwards(x, y, spaceCoordinates, energizedCoordinates, false);
-                downwards(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveUpwards(x, y, spaceCoordinates, energizedCoordinates, false);
+                moveDownwards(x, y, spaceCoordinates, energizedCoordinates, false);
             }
-            case "\\" -> downwards(x, y, spaceCoordinates, energizedCoordinates, false);
-            case "/" -> upwards(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "\\" -> moveDownwards(x, y, spaceCoordinates, energizedCoordinates, false);
+            case "/" -> moveUpwards(x, y, spaceCoordinates, energizedCoordinates, false);
         }
     }
 
-    //    Calculates number of energized cells in a 3D coordinate system where the 3D is same location
+//    Calculates number of energized cells in a 3D coordinate system where the 3D is same location
     static int numberOfEnergized(int[][][] energizedCoordinates) {
         int number = 0;
         for (int[][] energizedCoordinate : energizedCoordinates) {
