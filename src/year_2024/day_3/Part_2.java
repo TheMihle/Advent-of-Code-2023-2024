@@ -15,8 +15,8 @@ public class Part_2 {
         Pattern mulPattern = Pattern.compile("mul\\(([0-9]+),([0-9]+)\\)|don't\\(\\)|do\\(\\)");
         Matcher mulMatcher = mulPattern.matcher(input);
 
-//        Calculating sum, add or don't add based on previous do() or don't()
-        int sum = 0;
+//        Calculating result, add or don't add based on previous do() or don't()
+        int result = 0;
         boolean include = true;
         while (mulMatcher.find()) {
 
@@ -28,12 +28,11 @@ public class Part_2 {
                 include = false;
             } else {
                 if (include) {
-                    sum += Integer.parseInt(mulMatcher.group(1)) * Integer.parseInt(mulMatcher.group(2));
+                    result += Integer.parseInt(mulMatcher.group(1)) * Integer.parseInt(mulMatcher.group(2));
                 }
             }
         }
 
-//        Output sum
-        System.out.println("Day 3, Part 2, Result: " + sum);
+        System.out.println("Day 3, Part 2, Result: " + result);
     }
 }

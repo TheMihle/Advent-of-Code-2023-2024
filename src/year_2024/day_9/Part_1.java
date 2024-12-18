@@ -41,7 +41,6 @@ public class Part_1 {
             ckeckSum += (long) i * disk.get(i);
         }
 
-//        Print checksum
         System.out.println("Day 9,Part 1, Checksum: " + ckeckSum);
     }
 }

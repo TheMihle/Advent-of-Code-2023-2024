@@ -16,7 +16,7 @@ public class Part_1 {
         LinkedList<String> linkedList = new LinkedList<>(Arrays.asList(inputArray));
         ListIterator<String> listIterator;
 
-//        Calculates stones based on rules provided
+//        Calculates number of stones based on rules provided
         for (int i = 0; i < 25; i++) {
             listIterator = linkedList.listIterator();
 

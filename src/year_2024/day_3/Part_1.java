@@ -15,13 +15,12 @@ public class Part_1 {
         Pattern mulPattern = Pattern.compile("mul\\(([0-9]+),([0-9]+)\\)");
         Matcher mulMatcher = mulPattern.matcher(input);
 
-//        Calculating sum
-        int sum = 0;
+//        Calculating result
+        int result = 0;
         while (mulMatcher.find()) {
-            sum += Integer.parseInt(mulMatcher.group(1)) * Integer.parseInt(mulMatcher.group(2));
+            result += Integer.parseInt(mulMatcher.group(1)) * Integer.parseInt(mulMatcher.group(2));
         }
 
-//        Output sum
-        System.out.println("Day 3, Part 1, Result:" + sum);
+        System.out.println("Day 3, Part 1, Result:" + result);
     }
 }

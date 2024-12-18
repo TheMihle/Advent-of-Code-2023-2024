@@ -5,19 +5,13 @@ import static common.ImportFile.fileTo2DArray;
 public class Part_1 {
     public static void main(String[] args) {
 
-//        Input array
-        String[][] array = fileTo2DArray("src\\year_2024\\day_2\\input.txt", " ");
+//        Input file as 2D array
+        String[][] inputArray = fileTo2DArray("src\\year_2024\\day_2\\input.txt", " ");
 
 //        Convert to int array
-        int[][] intArray = new int[array.length][];
-        for ( int i = 0; i < array.length; i++) {
-            intArray[i] = new int[array[i].length];
-            for (int j = 0; j < array[i].length; j++) {
-                intArray[i][j] = Integer.parseInt(array[i][j]);
-            }
-        }
+        int[][] intArray = convert2DStringArrToInt(inputArray);
 
-//        Calculates number of safes
+//        Calculates number of safe reports
         int numberSafe = 0;
 
         for (int[] ints : intArray) {
@@ -36,5 +30,17 @@ public class Part_1 {
         }
 
         System.out.println("Day 2, Part 1, Number of safe reports: " + numberSafe );
+    }
+
+//    Converts 2D String array to int
+    private static int[][] convert2DStringArrToInt(String[][] stringArray) {
+        int[][] intArray = new int[stringArray.length][];
+        for ( int i = 0; i < stringArray.length; i++) {
+            intArray[i] = new int[stringArray[i].length];
+            for (int j = 0; j < stringArray[i].length; j++) {
+                intArray[i][j] = Integer.parseInt(stringArray[i][j]);
+            }
+        }
+        return intArray;
     }
 }
