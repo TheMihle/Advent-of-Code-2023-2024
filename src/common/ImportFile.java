@@ -27,8 +27,11 @@ public class ImportFile {
         }
         return inputLines;
     }
+    public static String[][] fileTo2DArray(String path){
+        return fileTo2DArray(path, "");
+    }
 
-    public static String[][] fileTo2DArray(String path) {
+    public static String[][] fileTo2DArray(String path, String regex) {
 
 //        Import file as array per line
         ArrayList<String> inputLines = fileToArray(path);
@@ -37,13 +40,13 @@ public class ImportFile {
         String[][] coordinate2DArray = new String[inputLines.size()][];
 
         for (int i = 0; i < inputLines.size(); i++) {
-            coordinate2DArray[i] = (inputLines.get(i).split(""));
+            coordinate2DArray[i] = (inputLines.get(i).split(regex));
         }
 
         return coordinate2DArray;
     }
 
-    //    Converts a file to a String, all lines added together
+//    Converts a file to a String, all lines added together
     public static String fileToString(String path) {
 
 //        Creates scanner and string
@@ -64,5 +67,15 @@ public class ImportFile {
         }
 
         return inputString;
+    }
+
+//    Converts file to a string, then splits to array
+    public static String[] fileToSplittedString(String path, String regex) {
+        String inputString = fileToString(path);
+        return inputString.split(regex);
+    }
+
+    public static String[] fileToSplittedString(String path) {
+        return fileToSplittedString(path, "");
     }
 }
