@@ -1,4 +1,4 @@
-package day_6;
+package year_2023.day_6;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\day_6\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_6\\input.txt");
 
 //        Removes everything except the numbers and one space in between and then  splits and converts to int arrays
         for (int i = 0; i < inputLines.size(); i++) {

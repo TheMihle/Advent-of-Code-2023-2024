@@ -1,4 +1,4 @@
-package day_4;
+package year_2023.day_4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ public class Part_2 {
     public static void main(String[] arg) {
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\day_4\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_4\\input.txt");
 
 //        Array for number of copies of each cards
         int[] numberOfCards = new int[inputLines.size()];
@@ -63,6 +63,5 @@ public class Part_2 {
 
 //        Prints sum
         System.out.println("Sum: " + sum);
-        System.out.println(Arrays.toString(numberOfCards));
     }
 }

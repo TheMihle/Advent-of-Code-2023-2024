@@ -1,4 +1,4 @@
-package day_15;
+package year_2023.day_15;
 
 import static common.ImportFile.fileToString;
 
@@ -6,7 +6,7 @@ public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as string
-        String inputString = fileToString("src\\day_15\\input.txt");
+        String inputString = fileToString("src\\year_2023\\day_15\\input.txt");
 
 //        Convert string to array
         String[] sequence = inputString.split(",");

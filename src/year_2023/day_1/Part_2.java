@@ -1,4 +1,4 @@
-package day_1;
+package year_2023.day_1;
 
 import java.util.ArrayList;
 import java.util.regex.*;
@@ -26,7 +26,7 @@ public class Part_2 {
     public static void main(String[] args) {
 
 //        Import file as array
-        ArrayList<String> inputLines = fileToArray("src\\day_1\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_1\\input.txt");
 
 //        Pattern for what to find
         Pattern pattern = Pattern.compile("[0-9]|one|two|three|four|five|six|seven|eight|nine");

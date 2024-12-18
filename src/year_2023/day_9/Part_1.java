@@ -1,15 +1,15 @@
-package day_9;
+package year_2023.day_9;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import static common.ImportFile.fileToArray;
 
-public class Part_2 {
+public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\day_9\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_9\\testinput.txt");
 
         long sum = 0;
 
@@ -26,11 +26,11 @@ public class Part_2 {
             System.out.println(Arrays.toString(sequence));
 
 //            Calculates next step via recursive method
-            int previousValue = sequence[0] - rowCalc(sequence);
-            System.out.println(previousValue);
+            int nextValue = sequence[sequence.length-1] + rowCalc(sequence);
+            System.out.println(nextValue);
 
 //            Calculates sum
-            sum += previousValue;
+            sum += nextValue;
         }
 
 //        Prints sum
@@ -49,9 +49,9 @@ public class Part_2 {
         if (allZero){
             return 0;
         } else {
-            int previousValue = calcArray[0] - rowCalc(calcArray);
-            System.out.println(previousValue);
-            return previousValue;
+            int nextValue = calcArray[calcArray.length-1] + rowCalc(calcArray);
+            System.out.println(nextValue);
+            return nextValue;
         }
     }
 }

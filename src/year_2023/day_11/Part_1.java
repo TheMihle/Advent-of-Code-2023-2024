@@ -1,4 +1,4 @@
-package day_11;
+package year_2023.day_11;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as 2D array
-        String[][] spaceCoordinates= fileTo2DArray("src\\day_11\\input.txt");
+        String[][] spaceCoordinates= fileTo2DArray("src\\year_2023\\day_11\\input.txt");
 
         long sum = 0;
 

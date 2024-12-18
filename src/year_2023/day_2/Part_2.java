@@ -1,4 +1,4 @@
-package day_2;
+package year_2023.day_2;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -10,7 +10,7 @@ public class Part_2 {
     public static void main(String[] args) {
 
 //        Import file as array
-        ArrayList<String> inputLines = fileToArray("src\\day_2\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_2\\input.txt");
 
 //        Pattern for what to find
         Pattern colorPattern = Pattern.compile("red|green|blue");

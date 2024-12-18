@@ -1,4 +1,4 @@
-package day_8;
+package year_2023.day_8;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ public class Part_1 {
     public static void main(String[] args){
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\day_8\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_8\\input.txt");
 
 //        Patterns for recognizing 3 letters
         Pattern pattern = Pattern.compile("[A-Z]{3}");

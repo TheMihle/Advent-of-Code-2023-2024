@@ -1,6 +1,6 @@
 // May be overcomplicated for what it needs to, but it works
 
-    package day_7;
+    package year_2023.day_7;
 
     import java.util.ArrayList;
     import java.util.HashMap;
@@ -13,7 +13,7 @@
         public static void main(String[] arg){
 
     //        Import file as array per line
-            ArrayList<String> inputLines = fileToArray("src\\day_7\\input.txt");
+            ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_7\\input.txt");
 
     //        Convert array to an 2D array
             ArrayList<ArrayList<String>> cardArray = new ArrayList<>();

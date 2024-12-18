@@ -1,21 +1,19 @@
-// First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2. Solution 1 is probably better
-// Should have sorted before doing RegEx
+// Second solution/attempt, no RegEx, using loops and hashmap instead.
 
-package day_7;
+package year_2023.day_7;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static common.ImportFile.fileToArray;
 
-public class Part_1_Solution_1 {
+public class Part_1_Solution_2 {
     public static void main(String[] arg){
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\day_7\\input.txt");
+        ArrayList<String> inputLines = fileToArray("src\\year_2023\\day_7\\input.txt");
 
 //        Convert array to an 2D array
         ArrayList<ArrayList<String>> cardArray = new ArrayList<>();
@@ -27,52 +25,57 @@ public class Part_1_Solution_1 {
             }
         }
 
-//        Patterns for recognizing number of letters.
-        Pattern fivePattern = Pattern.compile("([A-Z1-9]).{0,3}\\1.{0,3}\\1.{0,3}\\1.{0,3}\\1");
-        Pattern fourPattern = Pattern.compile("([A-Z1-9]).{0,3}\\1.{0,3}\\1.{0,3}\\1");
-        Pattern threePattern = Pattern.compile("([A-Z1-9]).{0,3}\\1.{0,3}\\1");
-        Pattern twoPattern = Pattern.compile("([A-Z1-9]).{0,3}\\1");
-
 //        Sorted map for hand value and bids
         TreeMap<Long, Integer> handValueBidMap = new TreeMap<>();
 
         for (ArrayList<String> stringArray : cardArray) {
-            Matcher fiveMatcher = fivePattern.matcher(stringArray.get(0));
-            Matcher fourMatcher = fourPattern.matcher(stringArray.get(0));
-            Matcher threeMatcher = threePattern.matcher(stringArray.get(0));
-            Matcher twoMatcher = twoPattern.matcher(stringArray.get(0));
+
+//            Hashmap for possible characters
+            HashMap<Character, Integer> cardMap = new HashMap<>();
+            cardMap.put('2', 0);
+            cardMap.put('3', 0);
+            cardMap.put('4', 0);
+            cardMap.put('5', 0);
+            cardMap.put('6', 0);
+            cardMap.put('7', 0);
+            cardMap.put('8', 0);
+            cardMap.put('9', 0);
+            cardMap.put('T', 0);
+            cardMap.put('J', 0);
+            cardMap.put('Q', 0);
+            cardMap.put('K', 0);
+            cardMap.put('A', 0);
+
+//            Counts characeters and put it in to hashmap
+            for (char c : stringArray.get(0).toCharArray()){
+                cardMap.put(c, cardMap.get(c)+1);
+            }
 
 //            Finds hand value with combination bonus
             long key = handValue(stringArray.get(0));
 
 //            Five of a kind
-            if (fiveMatcher.find()){
+            if (cardMap.containsValue(5)){
                 key += 60000000000L;
 
 //                Four of a kind
-            } else if (fourMatcher.find()){
+            } else if (cardMap.containsValue(4)) {
                 key += 50000000000L;
 
+//                Full house
+            } else if (cardMap.containsValue(3) && cardMap.containsValue(2)) {
+                key += 40000000000L;
+
 //                Tree of a kind
-            } else if (threeMatcher.find()){
+            } else if (cardMap.containsValue(3)) {
                 key += 30000000000L;
-
-//                Four of a kind/full house
-                twoMatcher.find();
-                if (!twoMatcher.group(1).equals(threeMatcher.group(1))){
+//
+//                One/two pairs
+            } else if (cardMap.containsValue(2)) {
+                for (Map.Entry<Character, Integer> entry : cardMap.entrySet()){
+                    if (entry.getValue() == 2){
                         key += 10000000000L;
                     }
-                while (twoMatcher.find(twoMatcher.end(1))){
-                    if (!twoMatcher.group(1).equals(threeMatcher.group(1))){
-                        key += 10000000000L;
-                    }
-                }
-
-//                One/Two pairs
-            } else if (twoMatcher.find(0)) {
-                key += 10000000000L;
-                if (twoMatcher.find(twoMatcher.end(1))) {
-                    key += 10000000000L;
                 }
             }
 
