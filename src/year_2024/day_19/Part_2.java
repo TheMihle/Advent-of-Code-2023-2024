@@ -7,7 +7,6 @@ import static common.ImportFile.fileToArray;
 public class Part_2 {
     public static void main(String[] args) {
 
-//        Import file as array
         ArrayList<String> designs = fileToArray("src\\year_2024\\day_19\\input.txt");
 
 //        Extract patterns, add to HashSet
