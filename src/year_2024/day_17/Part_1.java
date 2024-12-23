@@ -24,7 +24,6 @@ public class Part_1 {
         int[] program = new int[stringProgram.length];
         for (int i = 0; i < stringProgram.length; i++) program[i] = Integer.parseInt(stringProgram[i]);
 
-
 //        Run the program
         String programOutput = runProgram(program, regisA, regisB, regisC);
         System.out.println("Day 17, Part 1, program output: " + programOutput);
