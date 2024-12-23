@@ -8,7 +8,6 @@ public class ImportFile {
 
 //    Converts a file in to an ArrayList, one line per element
     public static ArrayList<String> fileToArray(String path) {
-
         ArrayList<String> inputLines = new ArrayList<>();
 
 //        Loads file with text to scanner to load it in to the array
@@ -20,7 +19,6 @@ public class ImportFile {
         } catch (Exception e) {
             System.out.println("File not found or failed to load: " + e);
         }
-
         return inputLines;
     }
 
@@ -58,7 +56,6 @@ public class ImportFile {
         } catch (Exception e) {
             System.out.println("File not found or failed to load: " + e);
         }
-
         return inputString.toString();
     }
 
