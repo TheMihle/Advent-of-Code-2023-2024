@@ -7,7 +7,7 @@ import static common.ImportFile.fileToArray;
 
 public class Part_1 {
     public static void main(String[] args) {
-        ArrayList<String> programInfo = fileToArray("src\\year_2024\\day_17\\testinput.txt");
+        ArrayList<String> programInfo = fileToArray("src\\year_2024\\day_17\\input.txt");
 
 //        Extract registers to values
         String tempRegisA = programInfo.get(0).substring(programInfo.get(0).lastIndexOf(" ") + 1);
