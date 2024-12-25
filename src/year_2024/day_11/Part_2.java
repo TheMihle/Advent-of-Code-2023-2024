@@ -40,8 +40,8 @@ public class Part_2 {
 //        });
 
 //        Calculates the total number of stones
-        long sum = map.values().stream().mapToLong(l -> l).sum();
+        long stoneCount = map.values().stream().mapToLong(l -> l).sum();
 
-        System.out.println("Day 11, Part 2, Total number of stones: " + sum);
+        System.out.println("Day 11, Part 2, Total number of stones: " + stoneCount);
     }
 }

@@ -7,10 +7,10 @@ import static common.ImportFile.fileToArray;
 
 public class Part_1 {
     public static void main(String[] args) {
-        ArrayList<String> initialGateValues = fileToArray("src\\year_2024\\day_24\\input.txt");
+        List<String> initialGateValues = fileToArray("src\\year_2024\\day_24\\input.txt");
 
 //        Extract gate values
-        HashMap<String, Boolean> gateValues = new HashMap<>();
+        Map<String, Boolean> gateValues = new HashMap<>();
         while (!initialGateValues.getFirst().isEmpty()) {
             String[] tempArray = initialGateValues.removeFirst().split(": ");
             if (tempArray[1].equals("1")) gateValues.put(tempArray[0], true);
@@ -19,7 +19,7 @@ public class Part_1 {
         initialGateValues.removeFirst();
 
 //        Extract gates
-        ArrayList<ArrayList<String>> gates = new ArrayList<>();
+        List<List<String>> gates = new ArrayList<>();
         while (!initialGateValues.isEmpty()) {
             gates.add(new ArrayList<>(List.of(initialGateValues.removeFirst().split(" "))));
             gates.getLast().remove(3);
@@ -29,7 +29,7 @@ public class Part_1 {
         boolean change = true;
         while (change) {
             change = false;
-            for (ArrayList<String> gate : gates) {
+            for (List<String> gate : gates) {
                 if (gateValues.containsKey(gate.get(0)) && gateValues.containsKey(gate.get(2)) && !gateValues.containsKey(gate.get(3))) {
                     gateValues.put(gate.getLast(), gateOperation(gate.get(1), gateValues.get(gate.get(0)), gateValues.get(gate.get(2))));
                     change = true;

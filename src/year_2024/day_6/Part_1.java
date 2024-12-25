@@ -22,10 +22,11 @@ public class Part_1 {
 //        Move and mark positions loop
         while (coords[0] >= 0 && coords[0] < inputArray.length &&
                 coords[1] >= 0 && coords[1] < inputArray[coords[0]].length) {
+
             visitedArray[coords[0]][coords[1]] = 1;
 
 //            Checks next square and changes direction if needed
-//            Try/catch to ignore index out of bounds
+//            Try/catch to ignore index out of bounds, should fix this later
             try {
                 if (inputArray[coords[0] + x][coords[1] + y].equals("#")) {
                     if (direction == 3) direction = 0;

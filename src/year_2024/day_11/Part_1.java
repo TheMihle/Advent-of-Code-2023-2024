@@ -2,6 +2,7 @@ package year_2024.day_11;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 
 import static common.ImportFile.fileToSplittedString;
@@ -13,7 +14,7 @@ public class Part_1 {
         String[] inputArray = fileToSplittedString("src\\year_2024\\day_11\\input.txt", " ");
 
 //        Convert to LinkedList and create a listIterator
-        LinkedList<String> linkedList = new LinkedList<>(Arrays.asList(inputArray));
+        List<String> linkedList = new LinkedList<>(Arrays.asList(inputArray));
         ListIterator<String> listIterator;
 
 //        Calculates number of stones based on rules provided

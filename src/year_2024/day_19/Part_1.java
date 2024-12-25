@@ -1,13 +1,12 @@
 package year_2024.day_19;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import static common.ImportFile.fileToArray;
 
 public class Part_1 {
     public static void main(String[] args) {
-
-        ArrayList<String> designs = fileToArray("src\\year_2024\\day_19\\input.txt");
+        List<String> designs = fileToArray("src\\year_2024\\day_19\\input.txt");
 
 //        Extract patterns
         String[] patterns = designs.getFirst().split(", " );
@@ -23,6 +22,6 @@ public class Part_1 {
             if (design.matches(pattern)) possibleDesings++;
         }
 
-        System.out.println("Day 19, Part 1, Number of possible designs: " +possibleDesings);
+        System.out.println("Day 19, Part 1, Number of possible designs: " + possibleDesings);
     }
 }

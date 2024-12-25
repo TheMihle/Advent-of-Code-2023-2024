@@ -1,13 +1,13 @@
 package year_2024.day_17;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.StringJoiner;
 
 import static common.ImportFile.fileToArray;
 
 public class Part_1 {
     public static void main(String[] args) {
-        ArrayList<String> programInfo = fileToArray("src\\year_2024\\day_17\\input.txt");
+        List<String> programInfo = fileToArray("src\\year_2024\\day_17\\input.txt");
 
 //        Extract registers to values
         String tempRegisA = programInfo.get(0).substring(programInfo.get(0).lastIndexOf(" ") + 1);

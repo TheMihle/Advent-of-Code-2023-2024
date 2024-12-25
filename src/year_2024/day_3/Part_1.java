@@ -7,8 +7,6 @@ import static common.ImportFile.fileToString;
 
 public class Part_1 {
     public static void main(String[] args) {
-
-//        Import file as String
         String input = fileToString("src\\year_2024\\day_3\\input.txt");
 
 //        Patterns and matcher with group

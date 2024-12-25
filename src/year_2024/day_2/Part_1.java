@@ -7,8 +7,6 @@ public class Part_1 {
 
 //        Input file as 2D array
         String[][] inputArray = fileTo2DArray("src\\year_2024\\day_2\\input.txt", " ");
-
-//        Convert to int array
         int[][] intArray = convert2DStringArrToInt(inputArray);
 
 //        Calculates number of safe reports
@@ -32,7 +30,6 @@ public class Part_1 {
         System.out.println("Day 2, Part 1, Number of safe reports: " + numberSafe );
     }
 
-//    Converts 2D String array to int
     private static int[][] convert2DStringArrToInt(String[][] stringArray) {
         int[][] intArray = new int[stringArray.length][];
         for ( int i = 0; i < stringArray.length; i++) {
