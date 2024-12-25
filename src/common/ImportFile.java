@@ -2,6 +2,7 @@ package common;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ImportFile {
@@ -26,7 +27,7 @@ public class ImportFile {
     public static String[][] fileTo2DArray(String path, String regex) {
 
 //        Import file as array per line
-        ArrayList<String> inputLines = fileToArray(path);
+        List<String> inputLines = fileToArray(path);
 
 //        Create an 2D array of inputlines
         String[][] coordinate2DArray = new String[inputLines.size()][];
