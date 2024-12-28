@@ -6,6 +6,8 @@ import java.util.Set;
 import static common.ImportFile.fileToInt2DArray;
 
 public class Part_1 {
+    private static final int END_VALUE = 9;
+
     public static void main(String[] args) {
         int[][] topoMap = fileToInt2DArray("src\\year_2024\\day_10\\input.txt");
 
@@ -18,12 +20,12 @@ public class Part_1 {
                 }
             }
         }
-        System.out.println("Day 11, Part 1, Sum of trailhead scores: " + trailHeadScore);
+        System.out.println("Day 10, Part 1, Sum of trailhead scores: " + trailHeadScore);
     }
 
 //    Recursive method that finds the trailhead scores by traversing and checking if end is unique
     public static int findTrailHeadScore(Set<String> endPointMemory, int[][] topoMap, int row, int col, int nextValue) {
-        if (topoMap[row][col] == 9) {
+        if (topoMap[row][col] == END_VALUE) {
             if (endPointMemory.contains("[" +row + ", " + col + "]")) return 0;
             endPointMemory.add("[" +row + ", " + col + "]");
             return 1;
