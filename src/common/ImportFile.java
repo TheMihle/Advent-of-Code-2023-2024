@@ -25,23 +25,41 @@ public class ImportFile {
 
 //    Converts file to 2D array, with a specified split regex
     public static String[][] fileTo2DArray(String path, String regex) {
-
-//        Import file as array per line
         List<String> inputLines = fileToArray(path);
 
 //        Create an 2D array of inputlines
         String[][] coordinate2DArray = new String[inputLines.size()][];
-
         for (int i = 0; i < inputLines.size(); i++) {
             coordinate2DArray[i] = (inputLines.get(i).split(regex));
         }
-
         return coordinate2DArray;
     }
 
 //    Converts file to 2D array, one symbol per element
     public static String[][] fileTo2DArray(String path){
         return fileTo2DArray(path, "");
+    }
+
+//    Create an integer 2D array of inputlines
+    public static int[][] fileToInt2DArray(String path, String regex) {
+        String[][] stringArray = fileTo2DArray(path, regex);
+        int[][] intArray = new int[stringArray.length][];
+        try {
+            for ( int i = 0; i < stringArray.length; i++) {
+                intArray[i] = new int[stringArray[i].length];
+                for (int j = 0; j < stringArray[i].length; j++) {
+                    intArray[i][j] = Integer.parseInt(stringArray[i][j]);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Could not parse to to int, check file or regex :" + e);
+        }
+        return intArray;
+    }
+
+//    Converts file to integer 2D array, one symbol per element
+    public static int[][] fileToInt2DArray(String path) {
+        return fileToInt2DArray(path, "");
     }
 
 //    Converts a file to a String, all lines added together
