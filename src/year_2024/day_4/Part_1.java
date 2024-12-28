@@ -43,7 +43,6 @@ public class Part_1 {
         return number;
     }
 
-//    Checks if it's a valid index, not out of bounds
     public static <T> boolean indexCheck(T[][] array, int row, int col) {
         if (row < 0 || col < 0) return false;
         return row < array.length && col < array[row].length;

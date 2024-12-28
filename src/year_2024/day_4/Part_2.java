@@ -8,13 +8,13 @@ public class Part_2 {
 
         int number = 0;
 
-//        Loops through 2D Array and finds A to check for X-mas and counts them
+//        Loops through 2D Array and finds A to check for X-MAS and counts them
 //        Can ignore spots at the border
         for (int row = 1; row < inputArray.length-1; row++) {
             for (int col = 1; col < inputArray[row].length-1; col++) {
                 if (inputArray[row][col].equals("A")) {
 
-//                    Checks for the X-MAS pattern and counts if true
+//                    Checks for the X-MAS pattern around A and counts number
                     if (checkForXMAS(inputArray, row, col)) number++;
                 }
             }

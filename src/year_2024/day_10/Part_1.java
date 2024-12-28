@@ -22,10 +22,10 @@ public class Part_1 {
     }
 
 //    Recursive method that finds the trailhead scores by traversing and checking if end is unique
-    public static int findTrailHeadScore(Set<String> coordMemory, int[][] topoMap, int row, int col, int nextValue) {
+    public static int findTrailHeadScore(Set<String> endPointMemory, int[][] topoMap, int row, int col, int nextValue) {
         if (topoMap[row][col] == 9) {
-            if (coordMemory.contains("[" +row + ", " + col + "]")) return 0;
-            coordMemory.add("[" +row + ", " + col + "]");
+            if (endPointMemory.contains("[" +row + ", " + col + "]")) return 0;
+            endPointMemory.add("[" +row + ", " + col + "]");
             return 1;
         }
 
@@ -37,7 +37,7 @@ public class Part_1 {
 
             if (!indexCheck(topoMap, checkRow, checkCol)) continue;
             if (topoMap[checkRow][checkCol] == nextValue) {
-                trailHeadScore += findTrailHeadScore(coordMemory, topoMap, checkRow, checkCol, nextValue + 1);
+                trailHeadScore += findTrailHeadScore(endPointMemory, topoMap, checkRow, checkCol, nextValue + 1);
             }
         }
         return trailHeadScore;
@@ -45,11 +45,10 @@ public class Part_1 {
 
 //    Recursive method, but unique cordMemory
     private static int findTrailHeadScore(int[][] topoMap, int row, int col, int nextValue) {
-        Set<String> coordMemory = new HashSet<>();
-        return findTrailHeadScore(coordMemory, topoMap,row, col, nextValue);
+        Set<String> endPointMemory = new HashSet<>();
+        return findTrailHeadScore(endPointMemory, topoMap,row, col, nextValue);
     }
-
-//    Checks if it's a valid index, not out of bounds
+    
     public static boolean indexCheck(int[][] array, int row, int col) {
         if (row < 0 || col < 0) return false;
         return row < array.length && col < array[row].length;
