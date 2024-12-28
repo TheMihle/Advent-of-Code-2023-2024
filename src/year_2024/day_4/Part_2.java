@@ -4,8 +4,6 @@ import static common.ImportFile.fileTo2DArray;
 
 public class Part_2 {
     public static void main(String[] args) {
-
-//        Import file as 2D array
         String[][] inputArray = fileTo2DArray("src\\year_2024\\day_4\\input.txt");
 
         int number = 0;
@@ -27,14 +25,9 @@ public class Part_2 {
 
 //    Checks if there is X-MAS pattern
     public static boolean checkForXMAS(String[][] array, int row, int col) {
-
-        if (array[row - 1][col - 1].equals("M") && array[row + 1][col + 1].equals("S") ||
-            array[row - 1][col - 1].equals("S") && array[row + 1][col + 1].equals("M")) {
-            if (array[row - 1][col + 1].equals("M") && array[row + 1][col - 1].equals("S") ||
-                array[row - 1][col + 1].equals("S") && array[row + 1][col - 1].equals("M")) {
-                return true;
-            }
-        }
-        return false;
+        return ((array[row - 1][col - 1].equals("M") && array[row + 1][col + 1].equals("S") ||
+                 array[row - 1][col - 1].equals("S") && array[row + 1][col + 1].equals("M")) &&
+                (array[row - 1][col + 1].equals("M") && array[row + 1][col - 1].equals("S") ||
+                 array[row - 1][col + 1].equals("S") && array[row + 1][col - 1].equals("M")));
     }
 }

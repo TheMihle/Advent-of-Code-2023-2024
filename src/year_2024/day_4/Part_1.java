@@ -4,8 +4,6 @@ import static common.ImportFile.fileTo2DArray;
 
 public class Part_1 {
     public static void main(String[] args) {
-
-//        Import file as 2D array
         String[][] inputArray = fileTo2DArray("src\\year_2024\\day_4\\input.txt");
 
         int number = 0;
@@ -30,6 +28,7 @@ public class Part_1 {
 
         for (int deltaRow = -1; deltaRow <= 1; deltaRow++) {
             for (int deltaCol = -1; deltaCol <= 1; deltaCol++) {
+                if (deltaRow == 0 && deltaCol == 0) continue;
 
 //                Skip if coordinate border prevent word.
                 if (!indexCheck(array, row + 3 * deltaRow, col + 3 * deltaCol)) continue;
