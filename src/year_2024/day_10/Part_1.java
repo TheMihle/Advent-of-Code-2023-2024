@@ -1,5 +1,7 @@
 package year_2024.day_10;
 
+import common.Direction;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,10 +34,10 @@ public class Part_1 {
         }
 
         int trailHeadScore = 0;
-        int[][] directions = {{-1, 0},{0, -1}, {0, 1}, {1, 0}};
-        for (int[] direction : directions) {
-            int checkRow = row + direction[0];
-            int checkCol = col + direction[1];
+        for (Direction direction : Direction.values()) {
+            if (!direction.isCardinal()) continue;
+            int checkRow = row + direction.getDeltaX();
+            int checkCol = col + direction.getDeltaY();
 
             if (!indexCheck(topoMap, checkRow, checkCol)) continue;
             if (topoMap[checkRow][checkCol] == nextValue) {
