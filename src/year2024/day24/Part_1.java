@@ -26,26 +26,10 @@ public class Part_1 {
         }
 
 //        Calculate gate values
-        boolean change = true;
-        while (change) {
-            change = false;
-            for (List<String> gate : gates) {
-                if (gateValues.containsKey(gate.get(0)) && gateValues.containsKey(gate.get(2)) && !gateValues.containsKey(gate.get(3))) {
-                    gateValues.put(gate.getLast(), gateOperation(gate.get(1), gateValues.get(gate.get(0)), gateValues.get(gate.get(2))));
-                    change = true;
-                }
-            }
-        }
+        calcGateValues(gateValues, gates);
 
 //        Extract output from gates to string of binary
-        String output = gateValues.entrySet().stream()
-                .filter(entry -> entry.getKey().startsWith("z"))
-                .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
-                .map(Map.Entry::getValue)
-                .map(value -> {
-                    if(value) return "1";
-                    else return "0";
-                }).collect(Collectors.joining());
+        String output = gateToBinary(gateValues, "z");
 
         System.out.println("Day 24, Part 1: \n" +
                 "Binary output: " + output + "\n" +
@@ -60,5 +44,29 @@ public class Part_1 {
             case "AND" -> bol1 & bol2;
             default -> throw new UnsupportedOperationException("Operation not found");
         };
+    }
+
+    private static void calcGateValues(Map<String, Boolean> gateValues, List<List<String>> gates) {
+        boolean change = true;
+        while (change) {
+            change = false;
+            for (List<String> gate : gates) {
+                if (gateValues.containsKey(gate.get(0)) && gateValues.containsKey(gate.get(2)) && !gateValues.containsKey(gate.get(3))) {
+                    gateValues.put(gate.getLast(), gateOperation(gate.get(1), gateValues.get(gate.get(0)), gateValues.get(gate.get(2))));
+                    change = true;
+                }
+            }
+        }
+    }
+
+    private static String gateToBinary(Map<String, Boolean> gateValues, String startsWith){
+        return gateValues.entrySet().stream()
+                .filter(entry -> entry.getKey().startsWith("z"))
+                .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+                .map(Map.Entry::getValue)
+                .map(value -> {
+                    if(value) return "1";
+                    else return "0";
+                }).collect(Collectors.joining());
     }
 }
