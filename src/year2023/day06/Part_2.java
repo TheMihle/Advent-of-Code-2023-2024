@@ -35,7 +35,6 @@ public class Part_2 {
             }
         }
 
-//        Calculates and prints sum
-        System.out.println("Sum: " + (maxTime - minTime + 1));
+        System.out.println("Day 6, Part 2, Number of ways to beat the record: " + (maxTime - minTime + 1));
     }
 }

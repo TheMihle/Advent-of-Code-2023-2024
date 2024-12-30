@@ -8,7 +8,7 @@ public class Part_1 {
     public static void main(String[] arg) {
         List<String> inputLines = fileToArray("src\\year2023\\day04\\input.txt");
 
-        int sum = 0;
+        int totalPoints = 0;
 
         for (int i = 0; i < inputLines.size(); i++) {
 
@@ -21,6 +21,7 @@ public class Part_1 {
                 gameData[j] = gameData[j].replace("  ", " ")
                                          .replaceFirst(" ", "");
             }
+
             String[] sWinningNumbers = gameData[0].split(" ");
             String[] sYourNumbers = gameData[1].split(" ");
 
@@ -44,10 +45,9 @@ public class Part_1 {
             }
 
 //            Calculates sum
-            sum += (int) Math.pow(2, matches - 1);
+            totalPoints += (int) Math.pow(2, matches - 1);
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 4, Part 1, Total value of points: " + totalPoints);
     }
 }

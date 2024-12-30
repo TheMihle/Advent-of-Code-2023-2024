@@ -14,18 +14,23 @@ public class Part_1 {
         for (String step : sequence) {
 
 //            Calculates hash value of a step
-            int currentValue = 0;
-            for (char character : step.toCharArray()) {
-                currentValue += character;
-                currentValue *= 17;
-                currentValue %= 256;
-            }
+            int currentValue = hash(step);
 
 //            Calculates sum
             sum += currentValue;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 15, Part 1, Sum of the results: " + sum);
+    }
+
+//    Calculates hash value of a label
+    public static int hash(String label) {
+        int value = 0;
+        for (char character : label.toCharArray()) {
+            value += character;
+            value *= 17;
+            value %= 256;
+        }
+        return value;
     }
 }

@@ -12,7 +12,7 @@ public class Part_2 {
 //        Convert string to array
         String[] sequence = inputString.split(",");
 
-        int sum = 0;
+        int focusingPower = 0;
 
 //        Array of linkedHashMap for boxes with sets of labels and lenses in them.
         Map<String, Integer>[] boxLensMapArray = new LinkedHashMap[256];
@@ -36,22 +36,16 @@ public class Part_2 {
             }
         }
 
-//        Prints out boxLensArray with content
-//        for (LinkedHashMap<String, Integer> stringIntegerLinkedHashMap : hashMap) {
-//            System.out.println(stringIntegerLinkedHashMap);
-//        }
-
-//            Calculates sum
+//            Calculates focusing power
         for (int i = 0; i < boxLensMapArray.length; i++) {
             int iteration = 1;
             for (Map.Entry<String, Integer> lens : boxLensMapArray[i].entrySet()) {
-                sum += (i + 1) * iteration * lens.getValue();
+                focusingPower += (i + 1) * iteration * lens.getValue();
                 iteration++;
             }
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 15, Part 2, Focusing power of lens configuration : " + focusingPower);
     }
 
 //    Calculates hash value of a label
@@ -64,6 +58,4 @@ public class Part_2 {
         }
         return value;
     }
-
-
 }

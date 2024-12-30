@@ -19,7 +19,7 @@ public class Part_1 {
         Pattern numberPattern = Pattern.compile("\\d+");
 
 //        Sum for Game ID:
-        int sum = 0;
+        int idSum = 0;
 
         for (int i = 0; i < inputLines.size(); i++) {
             String[] colorCubeArray = inputLines.get(i).split(": ")[1]
@@ -58,10 +58,10 @@ public class Part_1 {
             }
 
 //            Calculates sum
-            if (!overMax){ sum += i+1; }
+            if (!overMax){ idSum += i+1; }
         }
 
 //        Prints sum
-        System.out.println("Calculated sum: " + sum);
+        System.out.println("Day 2, Part 1, Calculated sum of IDs: " + idSum);
     }
 }

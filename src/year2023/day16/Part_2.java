@@ -15,7 +15,7 @@ public class Part_2 {
             moveRight(0, y, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
-            int localSum = numberOfEnergized(energizedCoordinates);
+            int localSum = energizedTilesCount(energizedCoordinates);
 //            System.out.println("Local sum: " + localSum);
             if (localSum > largestSum) largestSum = localSum;
         }
@@ -27,7 +27,7 @@ public class Part_2 {
             moveLeft(spaceCoordinates.length - 1, y, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
-            int localSum = numberOfEnergized(energizedCoordinates);
+            int localSum = energizedTilesCount(energizedCoordinates);
 //            System.out.println("Local sum: " + localSum);
             if (localSum > largestSum) largestSum = localSum;
         }
@@ -39,8 +39,7 @@ public class Part_2 {
             moveDownwards(x, 0, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
-            int localSum = numberOfEnergized(energizedCoordinates);
-//            System.out.println("Local sum: " + localSum);
+            int localSum = energizedTilesCount(energizedCoordinates);
             if (localSum > largestSum) largestSum = localSum;
         }
 
@@ -51,13 +50,11 @@ public class Part_2 {
             moveUpwards(x, spaceCoordinates[0].length - 1, spaceCoordinates, energizedCoordinates, true);
 
 //        Calculate sum and saves if its largest one yet:
-            int localSum = numberOfEnergized(energizedCoordinates);
-//            System.out.println("Local sum: " + localSum);
+            int localSum = energizedTilesCount(energizedCoordinates);
             if (localSum > largestSum) largestSum = localSum;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + largestSum);
+        System.out.println("Day 16, Part 2, Number of energized tiles: " + largestSum);
     }
 
     //    Moves downwards in coordinateSystem and energizes until symbol is hit, or loop is found
@@ -162,7 +159,7 @@ public class Part_2 {
     }
 
 //    Calculates number of energized cells in a 3D coordinate system where the 3D is same location
-    static int numberOfEnergized(int[][][] energizedCoordinates) {
+    static int energizedTilesCount(int[][][] energizedCoordinates) {
         int number = 0;
         for (int[][] energizedCoordinate : energizedCoordinates) {
             for (int[] ints : energizedCoordinate) {

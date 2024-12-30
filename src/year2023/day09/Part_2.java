@@ -9,7 +9,7 @@ public class Part_2 {
     public static void main(String[] args) {
         List<String> inputLines = fileToArray("src\\year2023\\day09\\input.txt");
 
-        long sum = 0;
+        long extrapolatedValuesSum = 0;
 
         for (String inputLine : inputLines) {
 
@@ -28,11 +28,10 @@ public class Part_2 {
             System.out.println(previousValue);
 
 //            Calculates sum
-            sum += previousValue;
+            extrapolatedValuesSum += previousValue;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 9, Part 2, Sum of extrapolated values: " + extrapolatedValuesSum);
     }
 
 //    Calculating next row, returns calculated next step

@@ -14,7 +14,7 @@ public class Part_2 {
         Pattern colorPattern = Pattern.compile("red|green|blue");
         Pattern numberPattern = Pattern.compile("\\d+");
 
-        int sum = 0;
+        int powerSum = 0;
 
         for (String inputLine : inputLines) {
             String[] colorCubeArray = inputLine.split(": ")[1]
@@ -57,10 +57,10 @@ public class Part_2 {
             }
 
 //            Calculating sum
-            sum += redHigh * greenHigh * blueHigh;
+            powerSum += redHigh * greenHigh * blueHigh;
         }
 
 //        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 2, Part 2, Sum of the set power: " + powerSum);
     }
 }

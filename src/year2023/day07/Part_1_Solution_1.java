@@ -35,10 +35,10 @@ public class Part_1_Solution_1 {
         Map<Long, Integer> handValueBidMap = new TreeMap<>();
 
         for (List<String> stringArray : cardArray) {
-            Matcher fiveMatcher = fivePattern.matcher(stringArray.get(0));
-            Matcher fourMatcher = fourPattern.matcher(stringArray.get(0));
-            Matcher threeMatcher = threePattern.matcher(stringArray.get(0));
-            Matcher twoMatcher = twoPattern.matcher(stringArray.get(0));
+            Matcher fiveMatcher = fivePattern.matcher(stringArray.getFirst());
+            Matcher fourMatcher = fourPattern.matcher(stringArray.getFirst());
+            Matcher threeMatcher = threePattern.matcher(stringArray.getFirst());
+            Matcher twoMatcher = twoPattern.matcher(stringArray.getFirst());
 
 //            Finds hand value with combination bonus
             long key = handValue(stringArray.get(0));
@@ -80,14 +80,13 @@ public class Part_1_Solution_1 {
 
 //        Calculates sum based on bid amount and rank
         int rank = 1;
-        long sum = 0L;
+        long totalWinnings = 0L;
         for (Map.Entry<Long, Integer> entry : handValueBidMap.entrySet()){
-            sum += (long) entry.getValue() * rank;
+            totalWinnings += (long) entry.getValue() * rank;
             rank++;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 7, Part 1, Total winnings: " + totalWinnings);
     }
 
 //    Calculates a hand value based on the individual cards only

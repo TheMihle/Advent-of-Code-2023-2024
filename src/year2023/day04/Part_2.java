@@ -1,6 +1,5 @@
 package year2023.day04;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,8 +10,8 @@ public class Part_2 {
         List<String> inputLines = fileToArray("src\\year2023\\day04\\input.txt");
 
 //        Array for number of copies of each cards
-        int[] numberOfCards = new int[inputLines.size()];
-        Arrays.fill(numberOfCards, 1);
+        int[] cardCounts = new int[inputLines.size()];
+        Arrays.fill(cardCounts, 1);
 
         for (int i = 0; i < inputLines.size(); i++) {
 
@@ -50,17 +49,16 @@ public class Part_2 {
 //            Ads copies of following cards
             if (i + matches > inputLines.size()) matches = (inputLines.size() - 1) - i;
             for (int j = 0; j < matches; j++) {
-                numberOfCards[i + j + 1] += numberOfCards[i];
+                cardCounts[i + j + 1] += cardCounts[i];
             }
         }
 
 //        Calculates sum
-        int sum = 0;
-        for (int numberOfCard : numberOfCards) {
-            sum += numberOfCard;
+        int totalCardCount = 0;
+        for (int cardCount : cardCounts) {
+            totalCardCount += cardCount;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 4, Part 2, Total number of Scratchcards: " + totalCardCount);
     }
 }

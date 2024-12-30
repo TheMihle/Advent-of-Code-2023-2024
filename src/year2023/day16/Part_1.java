@@ -23,11 +23,10 @@ public class Part_1 {
             System.out.println();
         }
 
-//        Calculate sum
-        int sum = numberOfEnergized(energizedCoordinates);
+//        Calculate number of energized tiles
+        int energizedTilesCount = energizedTilesCount(energizedCoordinates);
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 16, Part 1, Number of energized tiles: " + energizedTilesCount);
     }
 
 //    Moves downwards in coordinateSystem and energizes until symbol is hit, or loop is found
@@ -132,7 +131,7 @@ public class Part_1 {
     }
 
 //    Calculates number of energized cells in a 3D coordinate system where the 3D is same location
-    static int numberOfEnergized(int[][][] energizedCoordinates) {
+    static int energizedTilesCount(int[][][] energizedCoordinates) {
         int number = 0;
         for (int[][] energizedCoordinate : energizedCoordinates) {
             for (int[] ints : energizedCoordinate) {

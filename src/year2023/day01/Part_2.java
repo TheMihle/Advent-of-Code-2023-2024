@@ -11,7 +11,7 @@ public class Part_2 {
 //        Pattern for what to find
         Pattern pattern = Pattern.compile("[0-9]|one|two|three|four|five|six|seven|eight|nine");
 
-        int sum = 0;
+        int calibrationValueSum = 0;
 
 //        Loop through the different lines
         for (String inputLine : inputLines){
@@ -30,7 +30,7 @@ public class Part_2 {
 
 //            Puts them together and calculates sum
             try{
-                sum += Integer.parseInt(firstNumber + secondNumber);
+                calibrationValueSum += Integer.parseInt(firstNumber + secondNumber);
             }
             catch (Exception e){
                 System.out.println("Error, character in array: " + e);
@@ -38,7 +38,7 @@ public class Part_2 {
         }
 
 //        Print result
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 1, Part 2, Sum of calibration values: " + calibrationValueSum);
     }
 
 //    Converts letter numbers to numbers

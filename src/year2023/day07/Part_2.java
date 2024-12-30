@@ -25,23 +25,10 @@ public class Part_2 {
         for (List<String> stringArray : cardArray) {
 
 //            Hashmap for possible characters
-            Map<Character, Integer> cardMap = new HashMap<>();
-            cardMap.put('2', 0);
-            cardMap.put('3', 0);
-            cardMap.put('4', 0);
-            cardMap.put('5', 0);
-            cardMap.put('6', 0);
-            cardMap.put('7', 0);
-            cardMap.put('8', 0);
-            cardMap.put('9', 0);
-            cardMap.put('T', 0);
-            cardMap.put('J', 0);
-            cardMap.put('Q', 0);
-            cardMap.put('K', 0);
-            cardMap.put('A', 0);
+            Map<Character, Integer> cardMap = generateCardMap(0);
 
-//            Counts characeters and put it in to hashmap
-            for (char c : stringArray.get(0).toCharArray()){
+//            Counts characters and put it in to hashmap
+            for (char c : stringArray.getFirst().toCharArray()){
                 cardMap.put(c, cardMap.get(c)+1);
             }
 
@@ -98,14 +85,13 @@ public class Part_2 {
 
 //        Calculates sum based on bid amount and rank
         int rank = 1;
-        long sum = 0L;
+        long totalWinnings = 0L;
         for (Map.Entry<Long, Integer> entry : handBidMap.entrySet()){
-            sum += (long) entry.getValue() * rank;
+            totalWinnings += (long) entry.getValue() * rank;
             rank++;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println( "Day 7, Part 1, Total winnings: " + totalWinnings);
     }
 
 //    Calculates a hand value based on the individual cards only
@@ -121,13 +107,23 @@ public class Part_2 {
 
 //    Switch for the int value of cards
     private static int characterValue(char character){
-    return switch (character){
-        case 'A' -> 14;
-        case 'K' -> 13;
-        case 'Q' -> 12;
-        case 'J' -> 1;
-        case 'T' -> 10;
-        default -> Character.getNumericValue(character);
-    };
-}
+        return switch (character){
+            case 'A' -> 14;
+            case 'K' -> 13;
+            case 'Q' -> 12;
+            case 'J' -> 1;
+            case 'T' -> 10;
+            default -> Character.getNumericValue(character);
+        };
+    }
+
+    private static Map<Character, Integer> generateCardMap(Integer value) {
+        char[] cards = {'2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
+
+        Map<Character, Integer> cardMap = new HashMap<>();
+        for (char card : cards) {
+            cardMap.put(card, value);
+        }
+        return cardMap;
+    }
 }

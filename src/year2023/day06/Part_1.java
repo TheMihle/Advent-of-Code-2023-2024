@@ -48,7 +48,6 @@ public class Part_1 {
             sum *= (maxTime-minTime)+1;
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 6, Part 1, Sum: " + sum);
     }
 }

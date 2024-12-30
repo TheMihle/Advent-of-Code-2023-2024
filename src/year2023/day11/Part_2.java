@@ -10,7 +10,7 @@ public class Part_2 {
     public static void main(String[] args) {
         String[][] spaceCoordinates = fileTo2DArray("src\\year2023\\day11\\input.txt");
 
-        long sum = 0;
+        long lengthSum = 0;
 
 //        Arrays for columns and rows where space has expanded
         List<Integer> expSpaceX = new ArrayList<>();
@@ -46,10 +46,6 @@ public class Part_2 {
             }
         }
 
-//        Prints expanded space rows columns and rows
-//        System.out.println("Columns with expanded space: " + expSpaceX);
-//        System.out.println("Rows with expanded space: " + expSpaceY);
-
 //        Creates array with coordinates of the galaxies
         List<Point> galaxyCoordinates = new ArrayList<>();
 
@@ -60,9 +56,6 @@ public class Part_2 {
                 }
             }
         }
-
-//        Prints GalaxyCoordinates
-//        System.out.println(galaxyCoordinates);
 
 //        Calculates distance between all galaxies in array
         for (int i = 0; i < galaxyCoordinates.size(); i++) {
@@ -89,11 +82,10 @@ public class Part_2 {
                 }
 
 //                Calculates sum
-                sum += Math.abs(yFirstGalaxy-ySecondGalaxy) + Math.abs(xFirstGalaxy-xSecondGalaxy) + extraSpace;
+                lengthSum += Math.abs(yFirstGalaxy-ySecondGalaxy) + Math.abs(xFirstGalaxy-xSecondGalaxy) + extraSpace;
             }
         }
 
-//        Prints sum
-        System.out.println("Sum: " + sum);
+        System.out.println("Day 11, Part 1, Sum of lengths: " + lengthSum);
     }
 }
