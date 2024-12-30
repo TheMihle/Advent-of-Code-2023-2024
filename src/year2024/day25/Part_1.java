@@ -6,7 +6,7 @@ import java.util.List;
 
 import static common.ImportFile.fileToArray;
 
-// I feel like this code isnt the best code, but it works.
+// I feel like this code isn't the best code, but it works.
 public class Part_1 {
     public static void main(String[] args) {
         List<String> keyLockInput = fileToArray("src\\year2024\\day25\\input.txt");
@@ -33,16 +33,16 @@ public class Part_1 {
         List<int[]> locks = new ArrayList<>();
 
         for (List<String> keyLock : keyLockArray) {
-            int[] pinLenghtArray = new int[keyLock.getFirst().length()];
+            int[] pinLengthArray = new int[keyLock.getFirst().length()];
             for (int i = 0; i < keyLock.getFirst().length(); i++) {
                 int counter = 0;
                 for (String string : keyLock) {
                     if(string.charAt(i) == '#') counter++;
                 }
-                pinLenghtArray[i] = counter;
+                pinLengthArray[i] = counter;
             }
-            if (keyLock.getFirst().charAt(0) == '#') keys.add(pinLenghtArray);
-            else locks.add(pinLenghtArray);
+            if (keyLock.getFirst().charAt(0) == '#') keys.add(pinLengthArray);
+            else locks.add(pinLengthArray);
         }
 
         int maxHeight = keyLockArray.getFirst().size();
