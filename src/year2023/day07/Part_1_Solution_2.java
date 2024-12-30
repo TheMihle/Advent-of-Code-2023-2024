@@ -2,21 +2,16 @@
 
 package year2023.day07;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 import static common.ImportFile.fileToArray;
 
 public class Part_1_Solution_2 {
     public static void main(String[] arg){
-
-//        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\year2023\\day07\\input.txt");
+        List<String> inputLines = fileToArray("src\\year2023\\day07\\input.txt");
 
 //        Convert array to an 2D array
-        ArrayList<ArrayList<String>> cardArray = new ArrayList<>();
+        List<ArrayList<String>> cardArray = new ArrayList<>();
         for (int i = 0; i < inputLines.size(); i++) {
             String[] tempArray = inputLines.get(i).split(" ");
             cardArray.add(new ArrayList<>());
@@ -26,12 +21,12 @@ public class Part_1_Solution_2 {
         }
 
 //        Sorted map for hand value and bids
-        TreeMap<Long, Integer> handValueBidMap = new TreeMap<>();
+        Map<Long, Integer> handValueBidMap = new TreeMap<>();
 
-        for (ArrayList<String> stringArray : cardArray) {
+        for (List<String> stringArray : cardArray) {
 
 //            Hashmap for possible characters
-            HashMap<Character, Integer> cardMap = new HashMap<>();
+            Map<Character, Integer> cardMap = new HashMap<>();
             cardMap.put('2', 0);
             cardMap.put('3', 0);
             cardMap.put('4', 0);

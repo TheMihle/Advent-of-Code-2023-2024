@@ -7,8 +7,6 @@ import static common.ImportFile.fileToString;
 
 public class Part_2 {
     public static void main(String[] args) {
-
-//        Import file as string
         String inputString = fileToString("src\\year2023\\day15\\input.txt");
 
 //        Convert string to array
@@ -17,7 +15,7 @@ public class Part_2 {
         int sum = 0;
 
 //        Array of linkedHashMap for boxes with sets of labels and lenses in them.
-        LinkedHashMap<String, Integer>[] boxLensMapArray = new LinkedHashMap[256];
+        Map<String, Integer>[] boxLensMapArray = new LinkedHashMap[256];
 
         for (int i = 0; i < boxLensMapArray.length; i++) {
             boxLensMapArray[i] = new LinkedHashMap<>();

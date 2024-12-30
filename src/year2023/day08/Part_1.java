@@ -1,7 +1,8 @@
 package year2023.day08;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,9 +10,7 @@ import static common.ImportFile.fileToArray;
 
 public class Part_1 {
     public static void main(String[] args){
-
-//        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\year2023\\day08\\input.txt");
+        List<String> inputLines = fileToArray("src\\year2023\\day08\\input.txt");
 
 //        Patterns for recognizing 3 letters
         Pattern pattern = Pattern.compile("[A-Z]{3}");
@@ -30,7 +29,7 @@ public class Part_1 {
         }
 
 //        Converts input array to hashmap, first set of letters as keys and the two others in array as value.
-        HashMap<String, String[]> map = new HashMap<>();
+        Map<String, String[]> map = new HashMap<>();
         for (int i = 2; i < inputLines.size(); i++) {
             matcher = pattern.matcher(inputLines.get(i));
             matcher.find();

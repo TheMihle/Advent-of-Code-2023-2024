@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class ImportFile {
 
 //    Converts a file in to an ArrayList, one line per element
-    public static ArrayList<String> fileToArray(String path) {
-        ArrayList<String> inputLines = new ArrayList<>();
+    public static List<String> fileToArray(String path) {
+        List<String> inputLines = new ArrayList<>();
 
 //        Loads file with text to scanner to load it in to the array
         File inputFile = new File(path);
@@ -40,7 +40,7 @@ public class ImportFile {
         return fileTo2DArray(path, "");
     }
 
-//    Create an integer 2D array of inputlines
+//    Create an integer 2D array of inputLines
     public static int[][] fileToInt2DArray(String path, String regex) {
         String[][] stringArray = fileTo2DArray(path, regex);
         int[][] intArray = new int[stringArray.length][];

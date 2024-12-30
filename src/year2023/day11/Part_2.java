@@ -2,20 +2,19 @@ package year2023.day11;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.List;
 
 import static common.ImportFile.fileTo2DArray;
 
 public class Part_2 {
     public static void main(String[] args) {
-
-//        Import file as 2D array
-        String[][] spaceCoordinates= fileTo2DArray("src\\year2023\\day11\\input.txt");
+        String[][] spaceCoordinates = fileTo2DArray("src\\year2023\\day11\\input.txt");
 
         long sum = 0;
 
 //        Arrays for columns and rows where space has expanded
-        ArrayList<Integer> expSpaceX = new ArrayList<>();
-        ArrayList<Integer> expSpaceY = new ArrayList<>();
+        List<Integer> expSpaceX = new ArrayList<>();
+        List<Integer> expSpaceY = new ArrayList<>();
 
 //        Finds where space is expanded horizontally
         for (int x = 0; x < spaceCoordinates[0].length; x++) {
@@ -52,7 +51,7 @@ public class Part_2 {
 //        System.out.println("Rows with expanded space: " + expSpaceY);
 
 //        Creates array with coordinates of the galaxies
-        ArrayList<Point> galaxyCoordinates = new ArrayList<>();
+        List<Point> galaxyCoordinates = new ArrayList<>();
 
         for (int y = 0; y < spaceCoordinates.length; y++) {
             for (int x = 0; x < spaceCoordinates[y].length; x++) {

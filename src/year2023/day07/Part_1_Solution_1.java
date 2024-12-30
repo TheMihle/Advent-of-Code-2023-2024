@@ -1,9 +1,7 @@
-// First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2. Solution 1 is probably better
-// Should have sorted before doing RegEx
-
 package year2023.day07;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
@@ -11,14 +9,14 @@ import java.util.regex.Pattern;
 
 import static common.ImportFile.fileToArray;
 
+// First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2. Solution 1 is probably better
+// Should have sorted before doing RegEx
 public class Part_1_Solution_1 {
     public static void main(String[] arg){
-
-//        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\year2023\\day07\\input.txt");
+        List<String> inputLines = fileToArray("src\\year2023\\day07\\input.txt");
 
 //        Convert array to an 2D array
-        ArrayList<ArrayList<String>> cardArray = new ArrayList<>();
+        List<ArrayList<String>> cardArray = new ArrayList<>();
         for (int i = 0; i < inputLines.size(); i++) {
             String[] tempArray = inputLines.get(i).split(" ");
             cardArray.add(new ArrayList<>());
@@ -34,9 +32,9 @@ public class Part_1_Solution_1 {
         Pattern twoPattern = Pattern.compile("([A-Z1-9]).{0,3}\\1");
 
 //        Sorted map for hand value and bids
-        TreeMap<Long, Integer> handValueBidMap = new TreeMap<>();
+        Map<Long, Integer> handValueBidMap = new TreeMap<>();
 
-        for (ArrayList<String> stringArray : cardArray) {
+        for (List<String> stringArray : cardArray) {
             Matcher fiveMatcher = fivePattern.matcher(stringArray.get(0));
             Matcher fourMatcher = fourPattern.matcher(stringArray.get(0));
             Matcher threeMatcher = threePattern.matcher(stringArray.get(0));

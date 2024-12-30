@@ -2,14 +2,13 @@ package year2023.day04;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static common.ImportFile.fileToArray;
 
 public class Part_2 {
     public static void main(String[] arg) {
-
-//        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\year2023\\day04\\input.txt");
+        List<String> inputLines = fileToArray("src\\year2023\\day04\\input.txt");
 
 //        Array for number of copies of each cards
         int[] numberOfCards = new int[inputLines.size()];

@@ -1,15 +1,13 @@
 package year2023.day09;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static common.ImportFile.fileToArray;
 
 public class Part_2 {
     public static void main(String[] args) {
-
-//        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\year2023\\day09\\input.txt");
+        List<String> inputLines = fileToArray("src\\year2023\\day09\\input.txt");
 
         long sum = 0;
 

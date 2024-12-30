@@ -1,15 +1,14 @@
 package year2023.day03;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static common.ImportFile.fileToArray;
 
 public class Part_1 {
     public static void main(String[] args) {
-
-//        Import file as array per line
-        ArrayList<String> inputLines = fileToArray("src\\year2023\\day03\\input.txt");
+        List<String> inputLines = fileToArray("src\\year2023\\day03\\input.txt");
 
 //        Pattern for what to find
         Pattern numberPattern = Pattern.compile("\\d+");

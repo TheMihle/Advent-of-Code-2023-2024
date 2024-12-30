@@ -4,8 +4,6 @@ import static common.ImportFile.fileToString;
 
 public class Part_1 {
     public static void main(String[] args) {
-
-//        Import file as string
         String inputString = fileToString("src\\year2023\\day15\\input.txt");
 
 //        Convert string to array
