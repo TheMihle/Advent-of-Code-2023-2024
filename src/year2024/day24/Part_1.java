@@ -4,10 +4,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        List<String> initialGateValues = fileToArray("src\\year2024\\day24\\input.txt");
+        List<String> initialGateValues = fileToArray(getInputPath(Part_1.class));
 
 //        Extract gate values
         Map<String, Boolean> gateValues = new HashMap<>();

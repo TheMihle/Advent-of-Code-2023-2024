@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.StringJoiner;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        List<String> programInfo = fileToArray("src\\year2024\\day17\\input.txt");
+        List<String> programInfo = fileToArray(getInputPath(Part_1.class));
 
 //        Extract registers to values
         String tempRegisA = programInfo.get(0).substring(programInfo.get(0).lastIndexOf(" ") + 1);

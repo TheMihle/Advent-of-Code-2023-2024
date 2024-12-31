@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static common.ImportFile.*;
+import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1_2 {
     public static void main(String[] args) {
-        List<String> inputArray = fileToArray("src\\year2024\\day01\\input.txt");
+        List<String> inputArray = fileToArray(getInputPath(Part_1_2.class));
 
 //        Creates two arrays for the two lists
         List<Integer> leftList = new ArrayList<>();

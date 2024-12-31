@@ -6,12 +6,13 @@ import java.util.List;
 import java.util.ListIterator;
 
 import static common.ImportFile.fileToSplittedString;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array
-        String[] inputArray = fileToSplittedString("src\\year2024\\day11\\input.txt", " ");
+        String[] inputArray = fileToSplittedString(getInputPath(Part_1.class), " ");
 
 //        Convert to LinkedList and create a listIterator
         List<String> linkedList = new LinkedList<>(Arrays.asList(inputArray));

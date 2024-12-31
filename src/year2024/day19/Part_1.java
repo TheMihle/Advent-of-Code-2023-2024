@@ -3,10 +3,11 @@ package year2024.day19;
 import java.util.List;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        List<String> designs = fileToArray("src\\year2024\\day19\\input.txt");
+        List<String> designs = fileToArray(getInputPath(Part_1.class));
 
 //        Extract patterns
         String[] patterns = designs.getFirst().split(", " );

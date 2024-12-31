@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        List<String> initialSecretNumbers = fileToArray("src\\year2024\\day22\\input.txt");
+        List<String> initialSecretNumbers = fileToArray(getInputPath(Part_1.class));
 
 //        Convert secret numbers
         List<Long> secretNumbers  = new ArrayList<>();

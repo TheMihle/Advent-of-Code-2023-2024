@@ -5,11 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 // I feel like this code isn't the best code, but it works.
 public class Part_1 {
     public static void main(String[] args) {
-        List<String> keyLockInput = fileToArray("src\\year2024\\day25\\input.txt");
+        List<String> keyLockInput = fileToArray(getInputPath(Part_1.class));
 
 //        Split the locks/keys
         List<List<String>> keyLockArray = new ArrayList<>();

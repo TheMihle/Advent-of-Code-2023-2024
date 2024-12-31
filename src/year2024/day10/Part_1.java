@@ -6,12 +6,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static common.ImportFile.fileToInt2DArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     private static final int END_VALUE = 9;
 
     public static void main(String[] args) {
-        int[][] topoMap = fileToInt2DArray("src\\year2024\\day10\\input.txt");
+        int[][] topoMap = fileToInt2DArray(getInputPath(Part_1.class));
 
 //        Find the starting points, 0, count number of unique 9s reached for every 0
         int trailHeadScore = 0;

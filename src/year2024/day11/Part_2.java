@@ -6,12 +6,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static common.ImportFile.fileToSplittedString;
+import static common.PathConstructor.getInputPath;
 
 public class Part_2 {
     public static void main(String[] args) {
 
 //        Import file as an array
-        String[] inputArray = fileToSplittedString("src\\year2024\\day11\\input.txt", " ");
+        String[] inputArray = fileToSplittedString(getInputPath(Part_2.class), " ");
 
 //        Convert to HashMap
         Map<String, Long> map = new HashMap<>();

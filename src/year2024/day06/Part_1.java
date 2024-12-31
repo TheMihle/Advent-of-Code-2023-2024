@@ -1,12 +1,11 @@
 package year2024.day06;
 
 import static common.ImportFile.fileTo2DArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-
-//        Import 2D array
-        String[][] inputArray = fileTo2DArray("src\\year2024\\day06\\input.txt", "");
+        String[][] inputArray = fileTo2DArray(getInputPath(Part_1.class), "");
 
 //        Array for visited coordinates
         int[][] visitedArray = new int[inputArray.length][inputArray[0].length];

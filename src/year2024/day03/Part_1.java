@@ -4,10 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static common.ImportFile.fileToString;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        String input = fileToString("src\\year2024\\day03\\input.txt");
+        String input = fileToString(getInputPath(Part_1.class));
 
 //        Patterns and matcher with group
         Pattern mulPattern = Pattern.compile("mul\\(([0-9]+),([0-9]+)\\)");

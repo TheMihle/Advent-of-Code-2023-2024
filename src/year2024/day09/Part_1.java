@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static common.ImportFile.fileToSplittedString;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array and convert to int array
-        String[] inputArray = fileToSplittedString("src\\year2024\\day09\\input.txt", "");
+        String[] inputArray = fileToSplittedString(getInputPath(Part_1.class), "");
 
         int[] intArray = new int[inputArray.length];
         for (int i = 0; i < inputArray.length; i++) {

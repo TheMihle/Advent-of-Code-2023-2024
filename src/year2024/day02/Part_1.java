@@ -1,10 +1,11 @@
 package year2024.day02;
 
 import static common.ImportFile.fileToInt2DArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        int[][] intArray = fileToInt2DArray("src\\year2024\\day02\\input.txt", " ");
+        int[][] intArray = fileToInt2DArray(getInputPath(Part_1.class), " ");
 
 //        Calculates number of safe reports
         int numberSafe = 0;

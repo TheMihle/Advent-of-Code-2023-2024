@@ -1,10 +1,11 @@
 package year2024.day04;
 
 import static common.ImportFile.fileTo2DArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_2 {
     public static void main(String[] args) {
-        String[][] inputArray = fileTo2DArray("src\\year2024\\day04\\input.txt");
+        String[][] inputArray = fileTo2DArray(getInputPath(Part_2.class));
 
         int number = 0;
 

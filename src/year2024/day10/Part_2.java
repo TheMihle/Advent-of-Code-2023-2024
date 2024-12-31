@@ -3,13 +3,14 @@ package year2024.day10;
 import common.Direction;
 
 import static common.ImportFile.fileToInt2DArray;
+import static common.PathConstructor.getInputPath;
 
-// This is just part 1, with some lines removed because they arent needed, no new code.
+// This is just part 1, with some lines removed because they aren't needed, no new code.
 public class Part_2 {
     private static final int END_VALUE = 9;
 
     public static void main(String[] args) {
-        int[][] topoMap = fileToInt2DArray("src\\year2024\\day10\\input.txt");
+        int[][] topoMap = fileToInt2DArray(getInputPath(Part_2.class));
 
 //        Find the starting points, 0, count number of unique 9s reached for every 0
         int trailHeadScore = 0;
