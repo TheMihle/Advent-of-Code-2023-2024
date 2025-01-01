@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static common.DataStructureUtils.string2DToInt;
+
 public class ImportFile {
 
 //    Converts a file in to an ArrayList, one line per element
@@ -43,18 +45,7 @@ public class ImportFile {
 //    Create an integer 2D array of inputLines
     public static int[][] fileToInt2DArray(String path, String regex) {
         String[][] stringArray = fileTo2DArray(path, regex);
-        int[][] intArray = new int[stringArray.length][];
-        try {
-            for ( int i = 0; i < stringArray.length; i++) {
-                intArray[i] = new int[stringArray[i].length];
-                for (int j = 0; j < stringArray[i].length; j++) {
-                    intArray[i][j] = Integer.parseInt(stringArray[i][j]);
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Could not parse to to int, check file or regex :" + e);
-        }
-        return intArray;
+        return string2DToInt(stringArray);
     }
 
 //    Converts file to integer 2D array, one symbol per element

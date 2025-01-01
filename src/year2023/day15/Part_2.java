@@ -3,14 +3,12 @@ package year2023.day15;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static common.ImportFile.fileToString;
+import static common.ImportFile.fileToSplittedString;
+import static common.PathConstructor.getInputPath;
 
 public class Part_2 {
     public static void main(String[] args) {
-        String inputString = fileToString("src\\year2023\\day15\\input.txt");
-
-//        Convert string to array
-        String[] sequence = inputString.split(",");
+        String[] sequence = fileToSplittedString(getInputPath(Part_2.class), ",");
 
         int focusingPower = 0;
 

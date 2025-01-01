@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static common.ImportFile.fileTo2DArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        String[][] spaceCoordinates = fileTo2DArray("src\\year2023\\day11\\input.txt");
+        String[][] spaceCoordinates = fileTo2DArray(getInputPath(Part_1.class));
 
         long lengthSum = 0;
 

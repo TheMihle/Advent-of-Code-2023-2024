@@ -3,10 +3,11 @@ package year2023.day04;
 import java.util.List;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] arg) {
-        List<String> inputLines = fileToArray("src\\year2023\\day04\\input.txt");
+        List<String> inputLines = fileToArray(getInputPath(Part_1.class));
 
         int totalPoints = 0;
 

@@ -8,12 +8,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 // First solution/attempt, using RegEx, fixed bug after completing attempt/solution 2. Solution 1 is probably better
 // Should have sorted before doing RegEx
 public class Part_1_Solution_1 {
     public static void main(String[] arg){
-        List<String> inputLines = fileToArray("src\\year2023\\day07\\input.txt");
+        List<String> inputLines = fileToArray(getInputPath(Part_1_Solution_1.class));
 
 //        Convert array to an 2D array
         List<ArrayList<String>> cardArray = new ArrayList<>();

@@ -1,7 +1,9 @@
 package year2024.day10;
 
+import common.DataStructureUtils;
 import common.Direction;
 
+import static common.DataStructureUtils.rangeCheck;
 import static common.ImportFile.fileToInt2DArray;
 import static common.PathConstructor.getInputPath;
 
@@ -34,16 +36,11 @@ public class Part_2 {
             int checkRow = row + direction.getDeltaX();
             int checkCol = col + direction.getDeltaY();
 
-            if (!indexCheck(topoMap, checkRow, checkCol)) continue;
+            if (!DataStructureUtils.rangeCheck(topoMap, checkCol, checkRow)) continue;
             if (topoMap[checkRow][checkCol] == nextValue) {
                 trailHeadScore += findTrailHeadScore(topoMap, checkRow, checkCol, nextValue + 1);
             }
         }
         return trailHeadScore;
-    }
-
-    public static boolean indexCheck(int[][] array, int row, int col) {
-        if (row < 0 || col < 0) return false;
-        return row < array.length && col < array[row].length;
     }
 }

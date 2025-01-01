@@ -4,10 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_2 {
     public static void main(String[] arg) {
-        List<String> inputLines = fileToArray("src\\year2023\\day04\\input.txt");
+        List<String> inputLines = fileToArray(getInputPath(Part_2.class));
 
 //        Array for number of copies of each cards
         int[] cardCounts = new int[inputLines.size()];

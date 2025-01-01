@@ -62,7 +62,7 @@ public class Part_1 {
 
     private static String gateToBinary(Map<String, Boolean> gateValues, String startsWith){
         return gateValues.entrySet().stream()
-                .filter(entry -> entry.getKey().startsWith("z"))
+                .filter(entry -> entry.getKey().startsWith(startsWith))
                 .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
                 .map(Map.Entry::getValue)
                 .map(value -> {

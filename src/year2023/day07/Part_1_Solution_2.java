@@ -5,10 +5,11 @@ package year2023.day07;
 import java.util.*;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1_Solution_2 {
     public static void main(String[] arg){
-        List<String> inputLines = fileToArray("src\\year2023\\day07\\input.txt");
+        List<String> inputLines = fileToArray(getInputPath(Part_1_Solution_2.class));
 
 //        Convert array to an 2D array
         List<ArrayList<String>> cardArray = new ArrayList<>();

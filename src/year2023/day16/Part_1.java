@@ -1,10 +1,11 @@
 package year2023.day16;
 
 import static common.ImportFile.fileTo2DArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        String[][] spaceCoordinates = fileTo2DArray("src\\year2023\\day16\\input.txt");
+        String[][] spaceCoordinates = fileTo2DArray(getInputPath(Part_1.class));
 
         int[][][] energizedCoordinates = new int[spaceCoordinates.length][spaceCoordinates[0].length][4];
 

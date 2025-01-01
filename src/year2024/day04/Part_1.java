@@ -1,5 +1,6 @@
 package year2024.day04;
 
+import static common.DataStructureUtils.rangeCheck;
 import static common.ImportFile.fileTo2DArray;
 import static common.PathConstructor.getInputPath;
 
@@ -32,7 +33,7 @@ public class Part_1 {
                 if (deltaRow == 0 && deltaCol == 0) continue;
 
 //                Skip if coordinate border prevent word.
-                if (!indexCheck(array, row + 3 * deltaRow, col + 3 * deltaCol)) continue;
+                if (!rangeCheck(array, row + 3 * deltaRow, col + 3 * deltaCol)) continue;
 
                 if (array[row + 1 * deltaRow][col + 1 * deltaCol].equals("M") &&
                     array[row + 2 * deltaRow][col + 2 * deltaCol].equals("A") &&
@@ -42,10 +43,5 @@ public class Part_1 {
             }
         }
         return number;
-    }
-
-    public static <T> boolean indexCheck(T[][] array, int row, int col) {
-        if (row < 0 || col < 0) return false;
-        return row < array.length && col < array[row].length;
     }
 }

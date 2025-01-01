@@ -3,10 +3,11 @@ package year2023.day06;
 import java.util.List;
 
 import static common.ImportFile.fileToArray;
+import static common.PathConstructor.getInputPath;
 
 public class Part_1 {
     public static void main(String[] args) {
-        List<String> inputLines = fileToArray("src\\year2023\\day06\\input.txt");
+        List<String> inputLines = fileToArray(getInputPath(Part_1.class));
 
 //        Removes everything except the numbers and one space in between and then  splits and converts to int arrays
         for (int i = 0; i < inputLines.size(); i++) {
