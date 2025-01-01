@@ -1,6 +1,5 @@
 package year2024.day10;
 
-import common.DataStructureUtils;
 import common.Direction;
 
 import static common.DataStructureUtils.rangeCheck;
@@ -36,7 +35,7 @@ public class Part_2 {
             int checkRow = row + direction.getDeltaX();
             int checkCol = col + direction.getDeltaY();
 
-            if (!DataStructureUtils.rangeCheck(topoMap, checkCol, checkRow)) continue;
+            if (!rangeCheck(topoMap, checkCol, checkRow)) continue;
             if (topoMap[checkRow][checkCol] == nextValue) {
                 trailHeadScore += findTrailHeadScore(topoMap, checkRow, checkCol, nextValue + 1);
             }
