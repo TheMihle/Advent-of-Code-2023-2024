@@ -16,7 +16,6 @@ public class Part_2 {
     public static void main(String[] args) {
         String[][] antennaMap = fileTo2DArray(getInputPath(Part_2.class ));
 
-        long starttime = System.currentTimeMillis();
         Map<String, List<Point>> antennaCoords = new HashMap<>();
         Set<Point> antinodes = new HashSet<>();
 
@@ -26,7 +25,6 @@ public class Part_2 {
 //        Find all antinodes and add to Set
         findAntinodes(antennaMap, antennaCoords, antinodes);
 
-        System.out.println("Time used: " + (System.currentTimeMillis() - starttime));
         System.out.println("Day 8, Part 2, Number of unique antinodes: " + antinodes.size());
     }
 
