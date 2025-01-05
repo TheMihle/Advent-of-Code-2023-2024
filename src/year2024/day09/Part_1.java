@@ -10,15 +10,14 @@ public class Part_1 {
     public static void main(String[] args) {
 
 //        Import file as array and convert to int array
-        String[] inputArray = fileToSplittedString(getInputPath(Part_1.class), "");
+        String[] inputDiskMap = fileToSplittedString(getInputPath(Part_1.class));
 
-        int[] intArray = new int[inputArray.length];
-        for (int i = 0; i < inputArray.length; i++) {
-            intArray[i] = Integer.parseInt(inputArray[i]);
+        int[] diskMap = new int[inputDiskMap.length];
+        for (int i = 0; i < inputDiskMap.length; i++) {
+            diskMap[i] = Integer.parseInt(inputDiskMap[i]);
         }
 
-//        Reconstruct and fragment disk
-        List<Integer> disk = reconstructDisk(intArray);
+        List<Integer> disk = reconstructDisk(diskMap);
         fragmentDisk(disk);
 
 //        Calculate checksum
@@ -27,15 +26,16 @@ public class Part_1 {
             ckeckSum += (long) i * disk.get(i);
         }
 
-        System.out.println("Day 9,Part 1, Checksum: " + ckeckSum);
+        System.out.println("Day 9,Part 1, Disk checksum: " + ckeckSum);
     }
 
-    private static List<Integer> reconstructDisk(int[] intArray) {
+//    Reconstruct disk from diskMap
+    private static List<Integer> reconstructDisk(int[] diskMap) {
         List<Integer> disk = new ArrayList<>();
         int nextBlockId = 0;
 
-        for (int i = 0; i < intArray.length; i++) {
-            for (int j = 0; j < intArray[i]; j++) {
+        for (int i = 0; i < diskMap.length; i++) {
+            for (int j = 0; j < diskMap[i]; j++) {
                 if (i % 2 == 0) disk.add(nextBlockId);
                 else disk.add(null);
             }
@@ -44,6 +44,7 @@ public class Part_1 {
         return disk;
     }
 
+//    Fill empty spaces on disk from the end of the disk
     private static void  fragmentDisk(List<Integer> disk) {
         for (int i = 0; i < disk.size(); i++) {
             if (disk.get(i) == null) {
